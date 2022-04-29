@@ -3,10 +3,10 @@ var playerHealth = 50;
 var playerAttack = 1;
 var playerPoints = 10;
 
+var enemyNames = ["Roberto", "Amy Android", "Robo Trumble"];
 var enemyName = "Roberto";
 var enemyHealth = 50;
 var enemyAttack = 1;
-var enemyPoints = 10;
 
 var fight = function () {
     // Alert players that they are starting the round
@@ -51,7 +51,8 @@ var fight = function () {
         if (confirmSkip) {
             window.alert(playerName + " has decided to skip this fight. Goodbye!");
             // subtract money from playerMoney for skipping
-            playerMoney = playerMoney - 2;
+            playerPoints = playerPoints - 2;
+            console.log(playerName + " now has " + playerPoints + " points")
         }
         // if no (false), ask question again by running fight() again
         else {
@@ -66,4 +67,6 @@ var fight = function () {
         }
     }
 }
-fight();
+for (var i = 0; i < enemyNames.length; i++) {
+    fight(enemyNames[i]);
+}
