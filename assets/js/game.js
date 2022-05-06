@@ -21,7 +21,7 @@ var fight = function (enemy) {
       if (confirmSkip) {
         window.alert(playerInfo.name + ' has decided to skip this fight. Goodbye!');
         // subtract money from playerInfo.money for skipping
-        playerInfo.money = playerInfo.money - 10;
+        playerInfo.money = Math.max(0, playerInfo.money - 10);
         console.log("playerMoney, " + playerInfo.money)
         break;
       }
