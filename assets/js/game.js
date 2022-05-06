@@ -40,7 +40,7 @@ var fight = function (enemy) {
       window.alert(enemy.name + ' has died!');
 
       // award player money for winning
-      playerInfo.money = Math.max(0, playerInfo.money - 10);
+      playerInfo.money = Math.max(0, playerInfo.money + 10);
       console.log("playerMoney, " + playerInfo.money)
 
       // leave while() loop since enemy is dead
@@ -62,7 +62,7 @@ var fight = function (enemy) {
       // leave while() loop if player is dead
       break;
     } else {
-      window.alert(playerInfo.name + ' still has ' + playerInfo.name + ' health left.');
+      window.alert(playerInfo.name + ' still has ' + playerInfo.health + ' health left.');
     }
   }
 };
@@ -99,7 +99,7 @@ var playerInfo = {
   }
 };
 
-var enemy = [
+var enemyInfo = [
   {
     name: "Roborto",
     attack: randomNumber(10, 14),
