@@ -40,7 +40,7 @@ var fight = function (enemy) {
       window.alert(enemy.name + ' has died!');
 
       // award player money for winning
-      playerInfo.money = Math.max(0, playerInfo.money + 10);
+      playerInfo.money = playerInfo.money + 20;
       console.log("playerMoney, " + playerInfo.money)
 
       // leave while() loop since enemy is dead
@@ -67,6 +67,8 @@ var fight = function (enemy) {
   }
 };
 
+
+// player information 
 var playerInfo = {
   name: window.prompt("What is your robot's name?"),
   health: 100,
@@ -122,7 +124,6 @@ var enemyInfo = [
 var startGame = function () {
   // reset player stats
   playerInfo.reset();
-  playerInfo.money = 10;
 
   // fight each enemy robot by looping over them and fighting them one at a time
   for (var i = 0; i < enemyInfo.length; i++) {
@@ -215,15 +216,15 @@ var shop = function () {
   }
 };
 
-// start first game when page loads
+console.log(enemyInfo);
+console.log(enemyInfo[0]);
+console.log(enemyInfo[0].name);
+console.log(enemyInfo[0]['attack']);
+
+/* END GAME INFORMATION / VARIABLES */
+
+/* RUN GAME */
 startGame();
 
 
 
-
-
-var food = {
-  name: "Banana",
-  type: "fruit",
-  calories: 105
-}
