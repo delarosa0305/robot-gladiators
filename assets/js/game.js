@@ -26,7 +26,7 @@ var fightOrSkip = function () {
       window.alert(playerInfo.name + " has decided to skip this fight. Goodbye!");
       // subtract money from playerMoney for skipping
       playerInfo.playerMoney = playerInfo.money - 10;
-      
+
       // return true if player wants to leave
       return true;
     }
@@ -219,25 +219,20 @@ var shop = function () {
   );
 
   // use switch case to carry out action
+  debugger;
+  shopOptionPrompt = parseInt(shopOptionPrompt);
   switch (shopOptionPrompt) {
-    case 'REFILL':
-    case 'refill':
+    case 1:
       playerInfo.refillHealth();
       break;
-    case 'UPGRADE':
-    case 'upgrade':
+    case 2:
       playerInfo.upgradeAttack();
       break;
-    case 'LEAVE':
-    case 'leave':
-      window.alert('Leaving the store.');
-
-      // do nothing, so function will end
+    case 3:
+      window.alert("Leaving the store.");
       break;
     default:
-      window.alert('You did not pick a valid option. Try again.');
-
-      // call shop() again to force player to pick a valid option
+      window.alert("You did not pick a valid option. Try again.");
       shop();
       break;
   }
